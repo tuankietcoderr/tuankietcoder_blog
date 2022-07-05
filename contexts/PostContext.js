@@ -9,7 +9,7 @@ export const PostContextProvider = ({ children }) => {
   const [categories, setCategories] = useState(null);
 
   useEffect(() => {
-    getPosts().then((data) => setPosts(data));
+    getPosts().then((data) => setPosts(data.reverse()));
     getCategories().then((data) => setCategories(data));
   }, []);
   const value = {

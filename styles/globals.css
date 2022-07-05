@@ -6,6 +6,10 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--body-bgcolor);
 }
+body {
+  min-height: 100vh;
+  margin: 5rem 10%;
+}
 
 a {
   color: inherit;
@@ -14,4 +18,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 1rem;
 }

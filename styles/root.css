@@ -34,6 +34,10 @@
   justify-content: space-evenly;
 }
 
+.column {
+  flex-direction: column;
+}
+
 .column-reverse {
   flex-direction: column-reverse;
 }
@@ -64,4 +68,9 @@
 .d-grid-60-40 {
   display: grid;
   grid-template-columns: 60% 40%;
+}
+
+.d-grid-70-30 {
+  display: grid;
+  grid-template-columns: 70% 30%;
 }

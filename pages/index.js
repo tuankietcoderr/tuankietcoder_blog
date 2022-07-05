@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { Navbar } from "../components";
+import { AllPosts, Categories } from "../components";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>tuankietcoder Blog</title>
         <meta
@@ -11,6 +11,10 @@ export default function Home() {
           content="A blog of Tran Tuan Kiet aka tuankietcoder"
         />
       </Head>
-    </div>
+      <main>
+        <AllPosts />
+        <Categories />
+      </main>
+    </>
   );
 }

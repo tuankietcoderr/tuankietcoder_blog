@@ -1,0 +1,25 @@
+.__categories-box {
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.__categories-title {
+  background-color: #000;
+  color: #fff;
+  height: fit-content;
+  width: fit-content;
+  padding: 0 1rem;
+  margin-bottom: 0;
+}
+
+.__categories-category-name {
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 1rem;
+  border-top: 1px dashed rgb(205, 205, 205);
+}
+
+.__categories-category-name:hover {
+  background-color: #000;
+  color: #fff;
+}

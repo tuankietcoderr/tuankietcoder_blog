@@ -12,7 +12,7 @@ const Loading = () => {
           minHeight: "100vh",
           alignContent: "center",
           display: "grid",
-          position: "absolute",
+          position: "fixed",
           top: 0,
           left: 0,
           right: 0,

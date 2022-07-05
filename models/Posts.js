@@ -34,6 +34,11 @@ const PostSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  _postImg: {
+    type: String,
+    default:
+      "https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU",
+  },
 });
 
 module.exports = mongoose.models.posts || mongoose.model("posts", PostSchema);

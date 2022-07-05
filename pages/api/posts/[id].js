@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     query: { id },
     method,
   } = req;
-
+  console.log(id);
   switch (method) {
     case "GET":
       try {
@@ -25,16 +25,20 @@ export default async function handler(req, res) {
       break;
     case "PUT":
       try {
-        const post = await Post.findByIdAndUpdate(id, req.body, {
+        const post = await Post.findById(id);
+        const update = { ...post._doc, ...req.body };
+        const newPost = await Post.findByIdAndUpdate(id, update, {
           new: true,
           runValidators: true,
         });
+        console.log(update);
+        // console.log(newPost);
 
         if (!post) {
           return res.status(400).json({ success: false });
         }
 
-        res.status(200).json({ success: true, data: post });
+        res.status(200).json({ success: true, data: newPost });
       } catch (error) {
         res.status(400).json({ success: false });
       }

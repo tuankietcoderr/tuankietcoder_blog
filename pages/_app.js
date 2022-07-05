@@ -3,6 +3,8 @@ import "../styles/globals.css";
 import "../styles/root.css";
 import "../styles/button.css";
 import "../styles/nav.css";
+import "../styles/post.css";
+import "../styles/category.css";
 import { Navbar } from "../components";
 
 function MyApp({ Component, pageProps }) {

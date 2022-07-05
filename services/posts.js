@@ -16,11 +16,6 @@ const getPostByID = async (id) => {
   return data;
 };
 
-const getPostsByCategory = async (category) => {
-  const { data } = await axios("/api/posts").then((res) => res.data);
-  return data.filter((post) => post.category.includes(category));
-};
-
 const createPost = async (form) => {
   const { data } = await axios
     .post("/api/posts", form)
@@ -43,8 +38,14 @@ const deletePost = async (id) => {
     .catch((err) => console.log(err));
 };
 
-const getRelatedPosts = (id, posts) => {
-  const result = posts.filter((post) => post.id !== id);
+const checkIncludes = (categoriesOne, categoriesTwo) => {
+  return categoriesOne.some((category) => categoriesTwo.includes(category));
+};
+
+const getRelatedPosts = (categories, posts) => {
+  const result = posts.filter((post) =>
+    checkIncludes(categories, post.category)
+  );
   result.splice(0, 5);
   return result;
 };
@@ -60,7 +61,6 @@ export {
   createPost,
   updatePost,
   deletePost,
-  getPostsByCategory,
   getRelatedPosts,
   getRecentPosts,
 };
