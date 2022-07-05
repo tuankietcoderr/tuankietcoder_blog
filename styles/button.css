@@ -1,0 +1,26 @@
+.btn {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--btn-bgcolor);
+  color: var(--btn-color);
+}
+
+.btn:hover {
+  background-color: var(--btn-hover-bgcolor);
+  color: var(--btn-hover-color);
+  border: 1px solid var(--btn-bgcolor);
+}

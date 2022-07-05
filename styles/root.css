@@ -1,0 +1,67 @@
+:root {
+  --btn-radius: 0.25rem;
+  --btn-bgcolor: #000;
+  --btn-color: #fff;
+  --btn-hover-bgcolor: #fff;
+  --btn-hover-color: #000;
+  --body-bgcolor: #f6fafc;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.center-100 {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-grid-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.d-grid-50-50 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.d-grid-40-60 {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+.d-grid-60-40 {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
