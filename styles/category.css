@@ -23,3 +23,13 @@
   background-color: #000;
   color: #fff;
 }
+.__categories-category-name.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.__categories-btn {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

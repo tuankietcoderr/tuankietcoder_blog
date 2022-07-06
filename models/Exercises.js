@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const ExerciseSchema = new mongoose.Schema({
+  fileUrl: {
+    type: String,
+  },
   title: {
     type: String,
     required: true,
@@ -29,22 +32,15 @@ const PostSchema = new mongoose.Schema({
   },
   comments: {
     type: [Object],
-    default: [
-      {
-        description: "",
-        createdAt: Date.now,
-      },
-    ],
   },
   shares: {
     type: Number,
     default: 0,
   },
-  _postImg: {
+  _exerciseImg: {
     type: String,
-    default:
-      "https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU",
   },
 });
 
-module.exports = mongoose.models.posts || mongoose.model("posts", PostSchema);
+module.exports =
+  mongoose.models.exercises || mongoose.model("exercises", ExerciseSchema);

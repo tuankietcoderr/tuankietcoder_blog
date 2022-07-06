@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState, useContext } from "react";
-import { Loading, Post } from "../../components";
+import { Categories, Loading, Post } from "../../components";
 import { PostContext } from "../../contexts/PostContext";
 
 const Category = () => {
@@ -19,9 +19,14 @@ const Category = () => {
   if (!categoryPosts || !posts) return <Loading />;
   return (
     <>
-      {categoryPosts.map((post) => (
-        <Post key={post._id} {...post} />
-      ))}
+      <main>
+        <div>
+          {categoryPosts.map((post) => (
+            <Post key={post._id} {...post} />
+          ))}
+        </div>
+        <Categories />
+      </main>
     </>
   );
 };

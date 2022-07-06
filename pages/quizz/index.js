@@ -1,7 +1,7 @@
 import React from "react";
 
 const Quizzes = () => {
-  return <div>Quizzes</div>;
+  return <h1>Tính năng đang được phát triển...</h1>;
 };
 
 export default Quizzes;

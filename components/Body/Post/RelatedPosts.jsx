@@ -3,7 +3,7 @@ import { PostContext } from "../../../contexts/PostContext";
 import { getRelatedPosts } from "../../../services/posts";
 import Link from "next/link";
 
-const RelatedPosts = ({ categories }) => {
+const RelatedPosts = ({ categories, id }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   const { posts } = useContext(PostContext);
   useEffect(() => {
@@ -20,7 +20,7 @@ const RelatedPosts = ({ categories }) => {
         <div className="__categories-box">
           {relatedPosts.length !== 0 ? (
             relatedPosts
-              .filter((post) => post._id === id)
+              .filter((post) => post._id !== id)
               .map((post) => (
                 <Link href={`/posts/${post._id}`} key={post._id} passHref>
                   <a>

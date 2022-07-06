@@ -5,3 +5,6 @@ export { default as Categories } from "./Body/Sidebar/Categories";
 export { default as Post } from "./Body/Post/Post";
 export { default as RecentPosts } from "./Body/Post/RecentPosts";
 export { default as RelatedPosts } from "./Body/Post/RelatedPosts";
+export { default as DownloadFile } from "./Modal/DownloadFile";
+export { default as CommentForm } from "./Body/Comment/CommentForm";
+export { default as Comments } from "./Body/Comment/Comments";

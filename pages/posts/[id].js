@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import {
   Categories,
+  CommentForm,
+  Comments,
   Loading,
   RecentPosts,
   RelatedPosts,
@@ -17,7 +19,7 @@ const PostDetail = () => {
       getPostByID(router.query.id).then((res) => setPost(res));
     }
   }, [router.isReady, router.query.id]);
-  console.log(post);
+  // console.log(post);
   if (!post) return <Loading />;
   return (
     <>
@@ -65,11 +67,15 @@ const PostDetail = () => {
             </div>
           </div>
           <article className="__post-content">{post.description}</article>
+          <div>
+            <CommentForm {...post} />
+            <Comments {...post} />
+          </div>
         </div>
         <div>
           <Categories />
           <RecentPosts id={post._id} />
-          <RelatedPosts categories={post.category} />
+          <RelatedPosts categories={post.category} id={post._id} />
         </div>
       </main>
     </>
