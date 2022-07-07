@@ -11,14 +11,13 @@ const RelatedPosts = ({ categories, id }) => {
       setRelatedPosts(getRelatedPosts(categories, posts));
     }
   }, [posts, categories]);
-  console.log(relatedPosts);
   return (
     <>
       <div>
         <h2 className="__categories-title">Bài viết liên quan</h2>
         <div style={{ borderBottom: "1px solid #000" }} />
         <div className="__categories-box">
-          {relatedPosts.length !== 0 ? (
+          {relatedPosts.length - 1 !== 0 ? (
             relatedPosts
               .filter((post) => post._id !== id)
               .map((post) => (
@@ -30,7 +29,7 @@ const RelatedPosts = ({ categories, id }) => {
                   </a>
                 </Link>
               ))
-          ) : relatedPosts.length === 0 ? (
+          ) : relatedPosts.length - 1 === 0 ? (
             <div className="__categories-category-name">Không có bài viết</div>
           ) : null}
         </div>

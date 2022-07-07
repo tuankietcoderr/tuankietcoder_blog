@@ -1,7 +1,6 @@
-import Link from "next/link";
 import moment from "moment";
-import { ChatLeftHeart, Heart, Share } from "react-bootstrap-icons";
-import { useRouter } from "next/router";
+import Link from "next/link";
+import { Heart, Share } from "react-bootstrap-icons";
 
 const Post = ({
   category,
@@ -12,19 +11,17 @@ const Post = ({
   shares,
   title,
   comments,
-  _postImg,
   _id,
+  _exerciseImg,
 }) => {
-  const router = useRouter();
-  console.log(router);
   return (
     <>
-      <Link href={`/posts/${_id}`} passHref>
+      <Link href={`/exercises/${_id}`} passHref>
         <a>
           <div className="__post-box">
             <div className="__post-box-img">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={_postImg || _exerciseImg} alt={title} />
+              <img src={_exerciseImg} alt={title} />
             </div>
             <div className="__post-box-info">
               <div className="d-flex space-between column">
@@ -38,10 +35,6 @@ const Post = ({
                     </span>
                     <span>
                       <Share /> {shares}
-                    </span>
-
-                    <span>
-                      <ChatLeftHeart /> {comments.length || 0}
                     </span>
                   </div>
                   <cite

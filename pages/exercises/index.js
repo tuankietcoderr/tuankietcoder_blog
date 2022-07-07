@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Post, Loading } from "../../components";
+import { Exercise, Loading } from "../../components";
 import { ExerciseContext } from "../../contexts/ExerciseContext";
 
 const Exercises = () => {
@@ -9,7 +9,7 @@ const Exercises = () => {
   return (
     <>
       {exercises.map((exercise) => (
-        <Post key={exercise._id} {...exercise} />
+        <Exercise key={exercise._id} {...exercise} />
       ))}
     </>
   );

@@ -21,9 +21,14 @@ const Category = () => {
     <>
       <main>
         <div>
-          {categoryPosts.map((post) => (
-            <Post key={post._id} {...post} />
-          ))}
+          {categoryPosts.length !== 0 ? (
+            categoryPosts.map((post) => <Post key={post._id} {...post} />)
+          ) : (
+            <h2>
+              Không có bài viết nào thuộc danh mục{" "}
+              <span className="btn">{router.query.slug}</span>
+            </h2>
+          )}
         </div>
         <Categories />
       </main>

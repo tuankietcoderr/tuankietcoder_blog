@@ -1,10 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { getCategories } from "../services/categories";
-import {
-  getPosts,
-  getPostsByCategory,
-  getRecentPosts,
-} from "../services/posts";
+import { getPosts, getPostsByCategory } from "../services/posts";
 
 export const PostContext = createContext();
 
@@ -21,11 +17,15 @@ export const PostContextProvider = ({ children }) => {
         setCategoryPosts(getPostsByCategory(data, res));
       });
     });
-  }, []);
+  }, [setPosts, setCategories, setCategoryPosts]);
+
   const value = {
     posts,
     categories,
     categoryPosts,
+    setPosts,
+    setCategories,
+    setCategoryPosts,
   };
 
   return <PostContext.Provider value={value}>{children}</PostContext.Provider>;

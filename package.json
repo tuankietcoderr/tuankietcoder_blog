@@ -13,9 +13,16 @@
     "moment": "^2.29.3",
     "mongoose": "^6.4.2",
     "next": "12.2.0",
+    "prismjs": "^1.28.0",
     "react": "18.2.0",
     "react-bootstrap-icons": "^1.8.4",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-katex": "^6.0.2",
+    "rehype-raw": "^6.1.1",
+    "remark-gfm": "^3.0.1",
+    "remark-math": "^5.1.1"
   },
   "devDependencies": {
     "eslint": "8.19.0",

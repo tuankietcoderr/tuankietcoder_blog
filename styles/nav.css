@@ -17,6 +17,14 @@ header {
   color: #fff;
 }
 
+div > a {
+  text-decoration: none;
+}
+
+.brand > a:hover {
+  color: #fff;
+}
+
 .coder {
   background-color: #fff;
   color: #000;

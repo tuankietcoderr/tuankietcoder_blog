@@ -16,6 +16,16 @@
   min-height: 100vh;
   display: grid;
   place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10% 15%;
+  z-index: 999;
+  overflow: auto;
 }
 
 .d-flex {

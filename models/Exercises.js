@@ -30,15 +30,20 @@ const ExerciseSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  comments: {
-    type: [Object],
-  },
   shares: {
     type: Number,
     default: 0,
   },
   _exerciseImg: {
     type: String,
+  },
+  views: {
+    type: Number,
+    default: 0,
+  },
+  downloads: {
+    type: Number,
+    default: 0,
   },
 });
 

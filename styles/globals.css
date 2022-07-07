@@ -6,7 +6,7 @@ body {
   background-color: var(--body-bgcolor);
 }
 
-* {
+*:not(pre) {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
@@ -18,11 +18,79 @@ body {
 
 a {
   color: inherit;
+  /* text-decoration: none; */
+}
+
+a:hover {
   text-decoration: none;
+  color: red;
+}
+
+*:not(p) > a {
+  text-decoration: none;
+}
+
+*:not(p) > a:hover {
+  color: inherit;
 }
 
 main {
   display: grid;
   grid-template-columns: 70% 30%;
   gap: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+p > img {
+  background-color: rgb(246, 246, 246);
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+p:has(img) {
+  width: 100%;
+  height: auto;
+}
+
+label {
+  display: block;
+}
+
+label + input {
+  font-size: inherit;
+  margin: 0.5rem 0;
+  width: 100%;
+  height: 40px;
+}
+
+label + textarea {
+  height: 400px;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  font-size: inherit;
+  margin: 0.5rem 0;
+  resize: vertical;
+}
+
+pre > code *,
+code {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
+}
+
+code {
+  background-color: rgb(232, 232, 232);
+  border-radius: 0.25rem;
 }

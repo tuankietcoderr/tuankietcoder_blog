@@ -1,6 +1,10 @@
 import moment from "moment";
 import { useRouter } from "next/router";
+import Prism from "prismjs";
+import "prismjs/plugins/line-numbers/prism-line-numbers";
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import {
   Categories,
   CommentForm,
@@ -11,6 +15,8 @@ import {
 } from "../../components";
 import { getPostByID } from "../../services/posts";
 
+//! WARNING
+
 const PostDetail = () => {
   const router = useRouter();
   const [post, setPost] = useState(null);
@@ -18,6 +24,12 @@ const PostDetail = () => {
     if (router.isReady) {
       getPostByID(router.query.id).then((res) => setPost(res));
     }
+    setTimeout(() => {
+      document.querySelectorAll("pre code").forEach((block) => {
+        block.classList.add("line-numbers");
+      });
+      Prism.highlightAll();
+    }, navigator.connection.rtt * 10 + 2000);
   }, [router.isReady, router.query.id]);
   // console.log(post);
   if (!post) return <Loading />;
@@ -66,7 +78,11 @@ const PostDetail = () => {
               </cite>
             </div>
           </div>
-          <article className="__post-content">{post.description}</article>
+          <article className="__post-content">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {post.description}
+            </ReactMarkdown>
+          </article>
           <div>
             <CommentForm {...post} />
             <Comments {...post} />

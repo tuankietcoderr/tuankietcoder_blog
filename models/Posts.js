@@ -29,12 +29,6 @@ const PostSchema = new mongoose.Schema({
   },
   comments: {
     type: [Object],
-    default: [
-      {
-        description: "",
-        createdAt: Date.now,
-      },
-    ],
   },
   shares: {
     type: Number,
@@ -44,6 +38,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     default:
       "https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU",
+  },
+  views: {
+    type: Number,
+    default: 0,
   },
 });
 

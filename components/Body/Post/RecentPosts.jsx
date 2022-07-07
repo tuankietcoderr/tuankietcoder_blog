@@ -11,14 +11,13 @@ const RecentPosts = ({ id }) => {
       setRecentPosts(getRecentPosts(posts));
     }
   }, [posts, id]);
-  //   console.log(recentPosts);
   return (
     <>
       <div>
         <h2 className="__categories-title">Bài viết gần đây</h2>
         <div style={{ borderBottom: "1px solid #000" }} />
         <div className="__categories-box">
-          {recentPosts.length !== 0 ? (
+          {recentPosts.length - 1 !== 0 ? (
             recentPosts
               .filter((post) => post._id !== id)
               .map((post) => (
@@ -30,7 +29,7 @@ const RecentPosts = ({ id }) => {
                   </a>
                 </Link>
               ))
-          ) : recentPosts.length === 0 ? (
+          ) : recentPosts.length - 1 === 0 ? (
             <div className="__categories-category-name">Không có bài viết</div>
           ) : null}
         </div>
