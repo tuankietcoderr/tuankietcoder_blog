@@ -38,6 +38,7 @@ const CommentForm = ({ _id, comments, setComments }) => {
           color: "#fff",
           padding: "0.25rem 1rem",
         }}
+        id="comment"
       >
         Bình luận
       </h3>

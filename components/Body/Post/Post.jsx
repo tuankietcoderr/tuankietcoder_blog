@@ -1,6 +1,6 @@
-import Link from "next/link";
 import moment from "moment";
-import { ChatLeftHeart, Heart, Share } from "react-bootstrap-icons";
+import Link from "next/link";
+import { ChatLeftDots, Heart, Share } from "react-bootstrap-icons";
 
 const Post = ({
   category,
@@ -34,11 +34,10 @@ const Post = ({
                       <Heart /> {likes}
                     </span>
                     <span>
-                      <Share /> {shares}
+                      <ChatLeftDots /> {comments.length || 0}
                     </span>
-
                     <span>
-                      <ChatLeftHeart /> {comments.length || 0}
+                      <Share /> {shares}
                     </span>
                   </div>
                   <cite

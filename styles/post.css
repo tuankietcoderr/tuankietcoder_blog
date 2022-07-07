@@ -119,7 +119,8 @@
   top: calc(62px + 2rem);
 }
 
-.__post-lcs > div > svg:hover {
+.__post-lcs > div > svg:hover,
+.__post-lcs > a > div > svg:hover {
   color: red;
   cursor: pointer;
 }
