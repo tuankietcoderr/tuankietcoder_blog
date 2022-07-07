@@ -26,6 +26,7 @@ export default async function handler(req, res) {
       try {
         const post = await Post.findById(id);
         const update = { ...post._doc, ...req.body };
+        console.log(req.body);
         const newPost = await Post.findByIdAndUpdate(id, update, {
           new: true,
           runValidators: true,

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import moment from "moment";
 import { ChatLeftHeart, Heart, Share } from "react-bootstrap-icons";
-import { useRouter } from "next/router";
 
 const Post = ({
   category,
@@ -15,8 +14,6 @@ const Post = ({
   _postImg,
   _id,
 }) => {
-  const router = useRouter();
-  console.log(router);
   return (
     <>
       <Link href={`/posts/${_id}`} passHref>

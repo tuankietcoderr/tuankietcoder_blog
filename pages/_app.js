@@ -9,6 +9,7 @@ import "../styles/post.css";
 import "../styles/root.css";
 import "../styles/comment.css";
 import "katex/dist/katex.min.css";
+import "react-toastify/dist/ReactToastify.css";
 
 //! Syntax highlighter
 import "prismjs/components/prism-markup-templating.js";

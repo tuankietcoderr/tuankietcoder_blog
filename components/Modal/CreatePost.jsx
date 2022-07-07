@@ -31,10 +31,10 @@ const CreatePost = ({ setShow }) => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const { title, description, category, _postImg } = formData;
     if (!title || !description || category.length === 0 || !_postImg) return;
-    axios
+    await axios
       .post("/api/posts", formData)
       .then((res) => {
         console.log(res);
